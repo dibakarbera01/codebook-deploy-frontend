@@ -4,7 +4,8 @@ export async function login(authDetail){
         headers: {"content-Type": "application/json"},
         body: JSON.stringify(authDetail)
     }
-    const response = await fetch(`${process.env.REACT_APP_HOST}/login`, requestOptions);
+    // const response = await fetch(`${process.env.REACT_APP_HOST}/login`, requestOptions);
+    const response = await fetch(`https://codebook-backend-vjpq.onrender.com/api/login`, requestOptions);
     if(!response.ok){
         throw { message: response.statusText, status: response.status }; //eslint-disable-line
     }
