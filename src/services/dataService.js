@@ -8,7 +8,7 @@ export async function getUser(){
     const browserData = getSession();
     const token = JSON.parse(sessionStorage.getItem("token"));
     const cbid = JSON.parse(sessionStorage.getItem("id"));
-    const response = await fetch(`http://localhost:8000/600/users/${cbid}`, {
+    const response = await fetch(`https://codebook-backend-vjpq.onrender.com/api/users/${cbid}`, {
         method: "get",
         headers: {
           "content-type": "/application.json",
@@ -24,7 +24,7 @@ export async function getUserOrders(){
     const token = JSON.parse(sessionStorage.getItem('token'));
     const id= JSON.parse(sessionStorage.getItem("id"));
     const browserData = getSession();
-    const response = await fetch(`http://localhost:8000/660/orders?user.id=${id}`, {
+    const response = await fetch(`https://codebook-backend-vjpq.onrender.com/api/orders?user.id=${id}`, {
         method: "GET",
         headers: {
           "content-type": "application/json",
@@ -51,7 +51,7 @@ export async function createOrder(cartLists, total, user){
         },
       };
   
-      const response = await fetch("http://localhost:8000/660/orders", {
+      const response = await fetch("https://codebook-backend-vjpq.onrender.com/api/orders", {
         method: "POST",
         headers: {
           "content-type": "application/json",
